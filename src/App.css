@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.wordContent {
+  font-size: 128px;
+}
+
+@media only screen and (max-width: 768px) {
+  .wordContent {
+  font-size: 96px;
+}
+}
+
+@media only screen and (max-width: 600px) {
+  .wordContent {
+  font-size: 64px;
+}
+}
