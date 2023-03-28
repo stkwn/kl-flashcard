@@ -32,12 +32,6 @@ function WordForm (props) {
           >
             提交
           </button>
-          {/* <button
-            className="btn m-3"
-            onClick={() => props.onHandleSubmit(wordString)}
-          >
-            导入词汇
-          </button> */}
           </div>
         </div>
       </div>
