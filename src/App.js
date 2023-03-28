@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 9e06870abe65a60d62ed038e19ebe25a9a6342a4
 import WordForm from "./component/wordForm";
 import { useEffect, useState } from "react";
 import WordPractice from "./component/WordPractice";
