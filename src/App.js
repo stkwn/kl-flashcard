@@ -1,7 +1,6 @@
-// import WordPractice from "./component/WWordPractice";
 import WordForm from "./component/wordForm";
 import { useEffect, useState } from "react";
-import WordPractice from "./component/wordPractice";
+import WordPractice from "./component/WordPractice";
 import Header from "./component/header";
 import Footer from "./component/footer";
 function App() {
