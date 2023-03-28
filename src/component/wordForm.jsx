@@ -2,9 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 
 function WordForm (props) {
-  
   const [wordString, setWordString] = useState('');
-
   const handleChange = (e) => {
     const words = e.currentTarget.value;
     setWordString(words);

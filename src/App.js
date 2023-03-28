@@ -1,6 +1,6 @@
-import WordForm from "./component/WordForm";
 import { useEffect, useState } from "react";
 import WordPractice from "./component/WordPractice";
+import WordForm from "./component/WordForm";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
 function App() {
