@@ -1,4 +1,4 @@
-// import WordPractice from "./component/WWordPractice";
+
 import WordForm from "./component/wordForm";
 import { useEffect, useState } from "react";
 import WordPractice from "./component/wordPractice";
