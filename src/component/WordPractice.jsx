@@ -3,14 +3,21 @@ import styled from "styled-components";
 import {formatStringtoArray} from '../utils/helpers';
 
 const WordPractice = (props) => {
-  let wordListArray =formatStringtoArray(props.wordList);
-  const [word, setWord] = useState(wordListArray[0]);
+  const [wordListArray, setWordListArray] = useState(formatStringtoArray(props.wordList))
+  // const [word, setWord] = useState(wordListArray[0]);
   const [wordIndex, setWordIndex] = useState(0);
   
   const getRandomWord = () => {
-   const selectedWord =
-     wordListArray[Math.floor(Math.random() * wordListArray.length)];
-    setWord(selectedWord);
+    const tempIndex = Math.floor(Math.random() * wordListArray.length);
+    if (tempIndex === wordIndex) {
+      if (tempIndex === wordListArray.length-1) {
+        setWordIndex(0)
+      } else {
+        setWordIndex(tempIndex+1)
+      }
+    } else {
+      setWordIndex(tempIndex);
+    }
   }
 
   const getNormalWord =() =>{
@@ -19,25 +26,21 @@ const WordPractice = (props) => {
     } else {
       setWordIndex(wordIndex=>wordIndex+1);
     } 
-    setWord(wordListArray[wordIndex]);
   }  
 
   const removeWord = () => {
-    if (wordIndex === wordListArray.length-1) {
+    wordListArray.splice(wordIndex,1);
+    if (wordIndex === wordListArray.length) {
       setWordIndex(0);
-      setWord(wordListArray[0])
-    }
-      else{
-      setWord(wordListArray[wordIndex+1])
-      }  
-    wordListArray = wordListArray.filter(w => w !== word);
-    props.onWordRemove(wordListArray.join(" "));
+    } 
+    setWordListArray([...wordListArray]);
+    props.onWordRemove([...wordListArray].join(" "));
   }
 
     return (
       <Wrapper className="page-100 ">
       <div className="section section-center word_box">
-          <p className="wordContent">{word}</p>
+          <p className="wordContent">{wordListArray[wordIndex]}</p>
           <div className="button__box">
             <button className="btn  m-3" onClick={getNormalWord}>
               顺序练习
@@ -48,7 +51,7 @@ const WordPractice = (props) => {
           </div>
           <div className="button__box">
 
-            <button className="btn special m-3" onClick={removeWord} disabled={word=== "开始"}>
+            <button className="btn special m-3" onClick={removeWord} >
               删除该字
             </button>
           </div>

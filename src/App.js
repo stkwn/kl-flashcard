@@ -1,8 +1,8 @@
-import WordForm from "./component/wordForm";
+import WordForm from "./component/WordForm";
 import { useEffect, useState } from "react";
 import WordPractice from "./component/WordPractice";
-import Header from "./component/header";
-import Footer from "./component/footer";
+import Header from "./component/Header";
+import Footer from "./component/Footer";
 function App() {
   const [wordList, setWordList] = useState(() => {
     const savedWordList = localStorage.getItem("wordList");
@@ -15,7 +15,6 @@ function App() {
   };
 
   const removeWord = (wordString) => {
-    console.log(wordString);
     setWordList(wordString);
   };
 
