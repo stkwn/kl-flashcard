@@ -4,7 +4,6 @@ import {formatStringtoArray} from '../utils/helpers';
 
 const WordPractice = (props) => {
   const [wordListArray, setWordListArray] = useState(formatStringtoArray(props.wordList))
-  // const [word, setWord] = useState(wordListArray[0]);
   const [wordIndex, setWordIndex] = useState(0);
   
   const getRandomWord = () => {
