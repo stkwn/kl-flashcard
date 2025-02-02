@@ -10,7 +10,7 @@ function WordForm (props) {
   
     return (
       <div className="page-100">
-        <div className="section section-center">
+        <div className="section-center">
           <div className="mb-3">
             <label htmlFor="wordlist" className="form-label mb-3">
               <h2>请输入汉字和词汇列表，以空格相隔</h2>

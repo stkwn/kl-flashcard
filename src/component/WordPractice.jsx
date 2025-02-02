@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import {formatStringtoArray} from '../utils/helpers';
 
@@ -6,6 +6,10 @@ const WordPractice = (props) => {
   const [wordListArray, setWordListArray] = useState(formatStringtoArray(props.wordList))
   const [wordIndex, setWordIndex] = useState(0);
   
+  useEffect(() => {
+    setWordListArray(formatStringtoArray(props.wordList));
+  }, [props.wordList]);
+
   const getRandomWord = () => {
     const tempIndex = Math.floor(Math.random() * wordListArray.length);
     if (tempIndex === wordIndex) {
@@ -38,7 +42,7 @@ const WordPractice = (props) => {
 
     return (
       <Wrapper className="page-100 ">
-      <div className="section section-center word_box">
+      <div className="ection-center word_box">
           <p className="wordContent">{wordListArray[wordIndex]}</p>
           <div className="button__box">
             <button className="btn  m-3" onClick={getNormalWord}>
